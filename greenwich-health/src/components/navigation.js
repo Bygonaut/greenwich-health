@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useContext }  from "react";
+import { AppContext } from '../App'
 
 const sections = [
-    {id:0, title:"Informed Consent For Clinical Research"},
+    {id:0, title:"Considerations for Participation"},
     {id:1, title:"Why is this study being done?"},
-    {id: 2, title:"Is there a potential conlfict of interest for thids study?"},
-    {id:3, title:"How was I selected to be in this study?"}
+    {id: 2, title:"Who Conducts Clinical Studies?"},
+    {id:3, title:"How Are Participants Protected?"}
 ];
 
 export default function Navigation() {
+
+    const {state, dispatch} = useContext(AppContext);
+    const changeInputValue = (newValue) => {
+
+        dispatch({ type: 'UPDATE_SECTION', data: newValue,});
+    };
     return (
-        <div className="flex-initial bg-gray-100 py-10 px-2 w-56">
-            <ul>
-            {sections.map(section => 
-                <li className="mb-5"><button className="w-full text-left">{section.title}</button></li>
-            )}     
-            </ul>    
-        </div>
+        <React.Fragment>
+            <div className="flex-initial bg-gray-100 py-10 px-2 w-56">
+                <ul>
+                {sections.map(section => 
+                    <li className="mb-5"><button value={section.id} onClick={e => changeInputValue(e.target.value)} className="w-full text-left">{section.title}</button></li>
+                )}     
+                </ul>    
+            </div>
+        </React.Fragment>
     );
    
 }
