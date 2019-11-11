@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Navigation from './components/navigation';
 import Study from './components/study';
 import Header from './components/header';
+import QuestionButton from './components/question-button';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navigation/>
       <Study />
     </div>
+    <QuestionButton/>
     </div>
   );
 }
