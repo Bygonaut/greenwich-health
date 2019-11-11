@@ -2,7 +2,7 @@ import React, { useContext }  from "react";
 import { AppContext } from '../App'
 
 const sections = [
-    {id:0, title:"Informed Consent For Clinical Research"},
+    {id:0, title:"Considerations for Participation"},
     {id:1, title:"Why is this study being done?"},
     {id: 2, title:"Who Conducts Clinical Studies?"},
     {id:3, title:"How Are Participants Protected?"}
